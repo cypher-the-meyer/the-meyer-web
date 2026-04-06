@@ -12,7 +12,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <!-- Added Syne Tactile -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
     
     <style>
         html { scroll-behavior: smooth; }
@@ -27,7 +28,7 @@
             position: relative;
         }
 
-        /* THE PATTERN LAYER - This will now show through the dissolved header */
+        /* THE PATTERN LAYER */
         body::before {
             content: "";
             position: fixed;
@@ -40,14 +41,15 @@
             pointer-events: none;
         }
 
+        /* Updated with Syne Tactile and #E3DAC9 */
         .font-distressed {
-            font-family: 'Caesar Dressing', cursive;
+            font-family: 'Syne Tactile', cursive;
             color: #E3DAC9;
-            background: linear-gradient(to bottom, #E3DAC9 20%, #b5ad9d 80%);
+            background: linear-gradient(to bottom, #E3DAC9 40%, #b5ad9d 90%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.9)) contrast(1.1);
-            letter-spacing: 0.02em;
+            filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.8));
+            letter-spacing: -0.02em; /* Adjusted for Syne Tactile's script nature */
         }
 
         /* Standardized Scrollbar */
@@ -58,21 +60,18 @@
             border-radius: 10px; 
         }
 
-        /* THE DISSOLVE EFFECT 
-           Using mask-image to make the element itself transparent at the bottom.
-           This allows the body background/pattern to show through.
-        */
+        /* THE DISSOLVE EFFECT */
         .header-mask {
             mask-image: linear-gradient(to bottom, 
                 black 0%, 
                 black 60%, 
-                rgba(0,0,0,0.5) 80%, 
+                rgba(0,0,0,0.5) 85%, 
                 transparent 100%
             );
             -webkit-mask-image: linear-gradient(to bottom, 
                 black 0%, 
                 black 60%, 
-                rgba(0,0,0,0.5) 80%, 
+                rgba(0,0,0,0.5) 85%, 
                 transparent 100%
             );
         }
@@ -95,10 +94,10 @@
 
     <script type="text/babel">
         const SERIES_DETAILS = {
-            title: "FAR FROM HOME",
+            title: "THE TIDE & CURRENT",
             genre: "Fantasy • Sci-fi • Blood",
             description: "A tribe is as big as the smallest member of it. When a man leaves to find better fortune, there's no small story that's left behind.",
-            heroImage: "/media/posters/dynasties/AdmoniCity.png", 
+            heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=2000", 
             chapters: [
                 { id: 1, num: "01", title: "Peak of Tolerance", duration: "24:00" },
                 { id: 2, num: "02", title: "Fractured Zenith", duration: "23:45" },
@@ -185,20 +184,19 @@
                 <div className="min-h-screen bg-transparent">
                     <Lightbox image={activeImage} onClose={() => setActiveImage(null)} />
 
-                    {/* header-mask applied here for true transparency dissolve */}
                     <header className="relative w-full h-[80vh] md:h-[95vh] overflow-hidden bg-transparent header-mask">
                         <div 
                             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                             style={{ backgroundImage: `url(${SERIES_DETAILS.heroImage})` }}
                         />
                         
-                        <div className="absolute bottom-32 left-8 md:left-24 z-10 max-w-4xl">
+                        <div className="absolute bottom-32 left-8 md:left-24 z-10 max-w-5xl">
                             <div className="flex items-center gap-3 mb-6">
                                 <span className="bg-[#C02F12] text-white text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-[0.2em]">Live Session</span>
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
                             </div>
                             
-                            <h1 className="text-7xl md:text-[11rem] font-distressed leading-[0.85] mb-4">
+                            <h1 className="text-7xl md:text-[10rem] font-distressed leading-[0.9] mb-4">
                                 {SERIES_DETAILS.title}
                             </h1>
                         </div>
