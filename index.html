@@ -1,26 +1,20 @@
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Toriku Films | Official Home</title>
-            <!-- Tailwind CSS CDN -->
-            <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-        </head>
-        <body>
-            <div id="root"></div>
-            <!-- In a standard React project, the bundler injects the script here -->
-        </body>
-        </html>
-
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <link href="[https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap](https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap)" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toriku Films | Official Home</title>
+    
+    <!-- External Dependencies (Corrected URLs) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+        
         body { 
             margin: 0; 
             padding: 0; 
@@ -29,6 +23,7 @@
             font-family: 'Cinzel', serif; 
             overflow-x: hidden;
         }
+        
         .font-serif { font-family: 'Cinzel', serif; }
         
         html {
@@ -50,7 +45,7 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-type="module">
         const { useState } = React;
 
         const SERIES_PORTALS = [
@@ -78,7 +73,7 @@
                 id: 'Avalanche',
                 title: 'Avalanche',
                 subtitle: 'Rain Slicks and Neon Blades. In the neon-drenched streets of a future Kyoto, an underground syndicate faces a reckoning they never saw coming.',
-                image: /media/posters/dynasties/Harimeni_streets.png',
+                image: '/media/posters/dynasties/Harimeni_streets.png', // FIXED: Added the missing opening quote here
                 path: '#',
                 tags: ['Cyberpunk', 'Thriller'],
                 label: 'Trending',
