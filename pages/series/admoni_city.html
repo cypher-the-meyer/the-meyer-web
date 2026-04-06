@@ -63,16 +63,17 @@
             border-radius: 10px; 
         }
 
-        /* Hero Overlays */
+        /* Enhanced Hero Overlays for Smooth Dissolve */
         .hero-dissolve-overlay {
             position: absolute;
             inset: 0;
             background: linear-gradient(
                 to bottom, 
                 transparent 0%, 
-                transparent 40%, 
-                rgba(10, 10, 11, 0.3) 60%,
-                rgba(10, 10, 11, 0.8) 85%,
+                transparent 30%, 
+                rgba(10, 10, 11, 0.2) 50%,
+                rgba(10, 10, 11, 0.7) 75%,
+                rgba(10, 10, 11, 0.95) 90%,
                 #0a0a0b 100%
             );
             z-index: 2;
@@ -193,7 +194,7 @@
                 <div className="min-h-screen bg-transparent">
                     <Lightbox image={activeImage} onClose={() => setActiveImage(null)} />
 
-                    <header className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden bg-black">
+                    <header className="relative w-full h-[80vh] md:h-[95vh] overflow-hidden bg-[#0a0a0b]">
                         <div 
                             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                             style={{ backgroundImage: `url(${SERIES_DETAILS.heroImage})` }}
@@ -201,7 +202,7 @@
                         <div className="hero-vignette-overlay"></div>
                         <div className="hero-dissolve-overlay"></div>
                         
-                        <div className="absolute bottom-24 left-8 md:left-24 z-10 max-w-4xl">
+                        <div className="absolute bottom-32 left-8 md:left-24 z-10 max-w-4xl">
                             <div className="flex items-center gap-3 mb-6">
                                 <span className="bg-[#C02F12] text-white text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-[0.2em]">Live Session</span>
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
@@ -213,9 +214,9 @@
                         </div>
                     </header>
 
-                    <main className="max-w-7xl mx-auto px-8 py-24 relative z-10">
+                    <main className="max-w-7xl mx-auto px-8 py-24 relative z-10 -mt-16">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-40">
-                            <div className="lg:col-span-5 bg-[#0a0a0b]/40 border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-2xl">
+                            <div className="lg:col-span-5 bg-[#0a0a0b]/60 border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-2xl">
                                 <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-6">
                                     <h3 className="text-white font-serif text-2xl font-bold italic tracking-tight">Season 1 Manifest</h3>
                                     <span className="text-[#C02F12] text-[10px] font-black uppercase tracking-widest">Active</span>
@@ -260,7 +261,7 @@
                         </section>
                     </main>
 
-                    <footer className="border-t border-white/5 py-16 px-8 text-center bg-black/60 backdrop-blur-md relative z-10">
+                    <footer className="border-t border-white/5 py-16 px-8 text-center bg-[#0a0a0b] relative z-10">
                         <p className="text-white/10 text-[9px] tracking-[0.6em] uppercase font-bold">
                             &copy; 2026 Toriku Films • Excellence in Narrative Animation
                         </p>
