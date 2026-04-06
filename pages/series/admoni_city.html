@@ -12,7 +12,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
     
     <style>
         html {
@@ -42,16 +42,24 @@
             pointer-events: none;
         }
 
-        /* Paint Font Style */
-        .font-paint {
-            font-family: 'Permanent Marker', cursive;
-            background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+        /* Rusty Metal Font Style */
+        .font-rust {
+            font-family: 'Black Ops One', system-ui;
+            /* Multi-tonal gradient: Iron (top) to Oxidation (bottom) */
+            background: linear-gradient(
+                180deg, 
+                #4a4a4a 0%, 
+                #2d2d2d 30%, 
+                #8b4513 45%, 
+                #b7410e 70%, 
+                #3e1e12 100%
+            );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Simulates heavy brush stroke depth */
-            filter: drop-shadow(4px 4px 0px rgba(192, 47, 18, 0.4));
-            /* Allows the background texture to bleed through slightly */
-            mix-blend-mode: hard-light;
+            /* Adds "pitting" and depth to the metal */
+            filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.9)) contrast(1.2) brightness(0.8);
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
         }
 
         /* Standardized Scrollbar */
@@ -205,8 +213,9 @@
                                 <span className="bg-[#C02F12] text-white text-[10px] font-black px-3 py-1.5 rounded uppercase tracking-[0.2em]">Live Session</span>
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
                             </div>
-                            {/* Updated H1 with Paint Style */}
-                            <h1 className="text-7xl md:text-[11rem] font-paint leading-none mb-4 drop-shadow-2xl">
+                            
+                            {/* Updated H1 with Rusty Metal Style */}
+                            <h1 className="text-6xl md:text-[9rem] font-rust leading-none mb-4">
                                 {SERIES_DETAILS.title}
                             </h1>
                         </div>
