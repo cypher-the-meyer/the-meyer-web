@@ -12,7 +12,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
     
     <style>
         html { scroll-behavior: smooth; }
@@ -32,41 +32,26 @@
             content: "";
             position: fixed;
             inset: 0;
-            background-image: url('/media/posters/dynasties/Japanese_Wave_Pattern.svg'); 
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
             background-repeat: repeat;
-            background-size: 300px;
             opacity: 0.05;
             z-index: -1;
             pointer-events: none;
         }
 
-        /* Rubik Distressed - Updated with #E3DAC9 */
+        /* Updated with Caesar Dressing and #E3DAC9 */
         .font-distressed {
-            font-family: 'Rubik Scribble', system-ui;
-            color: #E3DAC9; /* Base Hex */
+            font-family: 'Caesar Dressing', cursive;
+            color: #E3DAC9;
             
-            /* Vertical "Dirt" Streaks via Masking */
-            -webkit-mask-image: linear-gradient(
-                to bottom,
-                rgba(0,0,0,1) 0%,
-                rgba(0,0,0,0.8) 50%,
-                rgba(0,0,0,1) 100%
-            ), 
-            repeating-linear-gradient(
-                45deg,
-                black 0px,
-                black 1px,
-                transparent 2px,
-                transparent 4px
-            );
+            /* Subtle weathering effect */
+            background: linear-gradient(to bottom, #E3DAC9 20%, #b5ad9d 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             
             /* Grime Shadow to give it "soot" depth */
-            text-shadow: 
-                2px 2px 8px rgba(0, 0, 0, 0.8),
-                -1px -1px 0px rgba(74, 60, 49, 0.5); /* Muddy accent shadow */
-            
-            letter-spacing: -0.02em;
-            filter: contrast(1.1) brightness(0.9);
+            filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.9)) contrast(1.1);
+            letter-spacing: 0.02em;
         }
 
         /* Standardized Scrollbar */
@@ -120,7 +105,7 @@
             title: "FAR FROM HOME",
             genre: "Fantasy • Sci-fi • Blood",
             description: "A tribe is as big as the smallest member of it. When a man leaves to find better fortune, there's no small story that's left behind.",
-            heroImage: "/media/posters/dynasties/AdmoniCity.png", 
+            heroImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000", 
             chapters: [
                 { id: 1, num: "01", title: "Peak of Tolerance", duration: "24:00" },
                 { id: 2, num: "02", title: "Fractured Zenith", duration: "23:45" },
@@ -132,10 +117,10 @@
         };
 
         const SCREENSHOTS = [
-            { id: 1, url: "/media/posters/dynasties/The_grid.PNG", caption: "The Grid" },
-            { id: 2, url: "/media/posters/dynasties/The_hunt.png", caption: "The Hunt" },
-            { id: 3, url: "/media/posters/dynasties/Lost.png", caption: "Lost" },
-            { id: 4, url: "/media/posters/dynasties/Admoni_river.png", caption: "Admoni River" },
+            { id: 1, url: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&q=80&w=800", caption: "The Grid" },
+            { id: 2, url: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800", caption: "The Hunt" },
+            { id: 3, url: "https://images.unsplash.com/photo-1506318137071-a8e063b4b519?auto=format&fit=crop&q=80&w=800", caption: "Lost" },
+            { id: 4, url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800", caption: "Admoni River" },
         ];
 
         const CAST = [
@@ -221,15 +206,14 @@
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
                             </div>
                             
-                            {/* Title with Rubik Scribble and #E3DAC9 */}
-                            <h1 className="text-7xl md:text-[10rem] font-distressed leading-[0.9] mb-4">
+                            {/* Updated Font Style */}
+                            <h1 className="text-7xl md:text-[11rem] font-distressed leading-[0.85] mb-4">
                                 {SERIES_DETAILS.title}
                             </h1>
                         </div>
                     </header>
 
                     <main className="max-w-7xl mx-auto px-8 py-24 relative z-10">
-                        {/* Remainder of the UI remains consistent */}
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-40">
                             <div className="lg:col-span-5 bg-[#0a0a0b]/40 border border-white/10 rounded-3xl p-10 backdrop-blur-xl shadow-2xl">
                                 <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-6">
