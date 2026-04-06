@@ -12,12 +12,10 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body { 
             margin: 0; 
@@ -42,24 +40,30 @@
             pointer-events: none;
         }
 
-        /* Rusty Metal Font Style */
-        .font-rust {
-            font-family: 'Black Ops One', system-ui;
-            /* Multi-tonal gradient: Iron (top) to Oxidation (bottom) */
+        /* Rubik Distressed/Dirt Style */
+        .font-distressed {
+            font-family: 'Rubik Scribble', system-ui;
+            /* Grimy Gradient: Bone white to muddy earth */
             background: linear-gradient(
                 180deg, 
-                #4a4a4a 0%, 
-                #2d2d2d 30%, 
-                #8b4513 45%, 
-                #b7410e 70%, 
-                #3e1e12 100%
+                #d1d1d1 0%, 
+                #a3937d 50%, 
+                #4a3c31 100%
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Adds "pitting" and depth to the metal */
-            filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.9)) contrast(1.2) brightness(0.8);
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
+            
+            /* Text Masking to simulate "dirt" streaks and erosion */
+            mask-image: repeating-linear-gradient(
+                45deg,
+                rgba(0,0,0,1) 0px,
+                rgba(0,0,0,1) 2px,
+                rgba(0,0,0,0.5) 4px
+            );
+
+            /* Gritty glow and shadow */
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.8)) contrast(1.5);
+            letter-spacing: -0.05em;
         }
 
         /* Standardized Scrollbar */
@@ -214,8 +218,8 @@
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
                             </div>
                             
-                            {/* Updated H1 with Rusty Metal Style */}
-                            <h1 className="text-6xl md:text-[9rem] font-rust leading-none mb-4">
+                            {/* Distressed Rubik H1 */}
+                            <h1 className="text-7xl md:text-[10rem] font-distressed leading-tight mb-4 drop-shadow-2xl">
                                 {SERIES_DETAILS.title}
                             </h1>
                         </div>
