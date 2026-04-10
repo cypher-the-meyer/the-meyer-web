@@ -12,8 +12,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
-    <!-- Added Syne Tactile -->
-    <link href="https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap" rel="stylesheet">
+    <!-- Added Slackey -->
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
     
     <style>
         html { scroll-behavior: smooth; }
@@ -41,15 +41,15 @@
             pointer-events: none;
         }
 
-        /* Updated with Syne Tactile and #E3DAC9 */
+        /* Updated with Slackey font */
         .font-distressed {
-            font-family: 'Syne Tactile', cursive;
+            font-family: 'Slackey', cursive;
             color: #E3DAC9;
             background: linear-gradient(to bottom, #E3DAC9 40%, #b5ad9d 90%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.8));
-            letter-spacing: -0.02em; /* Adjusted for Syne Tactile's script nature */
+            letter-spacing: -0.01em;
         }
 
         /* Standardized Scrollbar */
@@ -97,7 +97,7 @@
             title: "THE TIDE & CURRENT",
             genre: "Fantasy • Sci-fi • Blood",
             description: "A tribe is as big as the smallest member of it. When a man leaves to find better fortune, there's no small story that's left behind.",
-            heroImage: "/media/posters/dynasties/Tenoch_city.PNG", 
+            heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=2000", 
             chapters: [
                 { id: 1, num: "01", title: "Peak of Tolerance", duration: "24:00" },
                 { id: 2, num: "02", title: "Fractured Zenith", duration: "23:45" },
@@ -196,7 +196,7 @@
                                 <span className="text-white/80 text-sm font-bold tracking-widest uppercase">{SERIES_DETAILS.genre}</span>
                             </div>
                             
-                            <h1 className="text-7xl md:text-[10rem] font-distressed leading-[0.9] mb-4">
+                            <h1 className="text-7xl md:text-[8rem] font-distressed leading-[0.9] mb-4">
                                 {SERIES_DETAILS.title}
                             </h1>
                         </div>
