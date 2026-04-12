@@ -7,14 +7,15 @@
     
     <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Imported base fonts and the specific title fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Cinzel:wght@400;700;900&family=Labrada:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
-        
         body { 
             margin: 0; 
             padding: 0; 
@@ -57,27 +58,33 @@
                 path: '/pages/series/admoni_city',
                 tags: ['Action', 'Historical', 'Epic'],
                 label: 'New Release',
-                kanji: '朝'
+                kanji: '朝',
+                // Specific typography for this title
+                titleFont: "'Caesar Dressing', cursive"
             },
             {
                 id: 'The Glitz',
-                title: 'The Glitz',
+                title: 'SEASHORE LUST',
                 subtitle: 'Where ancient knowledge meets gold.',
-                image: '/media/posters/dynasties/Tenoch_city.PNG', // FIXED: Added underscore and uppercase PNG per your path
+                image: '/media/posters/dynasties/ciudadela.png',
                 path: '#',
                 tags: ['Cyberpunk', 'Mythology', 'Thriller'],
                 label: 'In Production',
-                kanji: '死'
+                kanji: '死',
+                // Specific typography for this title
+                titleFont: "'Labrada', serif"
             },
             {
                 id: 'Avalanche',
                 title: 'Avalanche',
                 subtitle: 'Rain Slicks and Neon Blades. In the neon-drenched streets of a future Kyoto, an underground syndicate faces a reckoning they never saw coming.',
-                image: '/media/posters/dynasties/Herimeni_streets.png', // FIXED: Corrected Harimeni to Herimeni per your path
+                image: '/media/posters/dynasties/Herimeni_streets.png',
                 path: '#',
                 tags: ['Cyberpunk', 'Thriller'],
                 label: 'Trending',
-                kanji: '闇'
+                kanji: '闇',
+                // Specific typography for this title
+                titleFont: "'Orbitron', sans-serif"
             }
         ];
 
@@ -117,7 +124,10 @@
                             </div>
                         </div>
                         
-                        <h2 className="text-5xl sm:text-7xl md:text-9xl font-black text-[#FAEBD7] mb-6 tracking-tighter transition-all duration-700 group-hover:text-white group-hover:translate-x-3">
+                        <h2 
+                            className="text-5xl sm:text-7xl md:text-9xl font-black text-[#FAEBD7] mb-6 tracking-tighter transition-all duration-700 group-hover:text-white group-hover:translate-x-3"
+                            style={{ fontFamily: series.titleFont }}
+                        >
                             {series.title}
                         </h2>
                         
