@@ -9,7 +9,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Imported base fonts and the specific title fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Cinzel:wght@400;700;900&family=Labrada:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -41,6 +40,16 @@
             background: #C02F12;
             border-radius: 10px;
         }
+
+        .tag-red { color: #C02F12; border-color: rgba(192, 47, 18, 0.3); }
+        .tag-purple { color: #A855F7; border-color: rgba(168, 85, 247, 0.3); }
+        .tag-yellow { color: #EAB308; border-color: rgba(234, 179, 8, 0.3); }
+
+        .label-knockout {
+            background-color: white;
+            color: black;
+            mix-blend-mode: screen;
+        }
     </style>
 </head>
 <body>
@@ -53,14 +62,14 @@
             {
                 id: 'FAR FROM HOME',
                 title: 'FAR FROM HOME',
-                subtitle: 'One home but many places to visit. A young men leaves the city in search of a .',
+                subtitle: 'One home but many places to visit. A young men leaves the city in search of a new destiny.',
                 image: '/media/posters/dynasties/Lost.png', 
                 path: '/pages/series/admoni_city',
                 tags: ['Action', 'Historical', 'Epic'],
                 label: 'New Release',
                 kanji: '朝',
-                // Specific typography for this title
-                titleFont: "'Caesar Dressing', cursive"
+                titleFont: "'Caesar Dressing', cursive",
+                tagColor: 'tag-red'
             },
             {
                 id: 'SEASHORE LUST',
@@ -71,20 +80,20 @@
                 tags: ['Cyberpunk', 'Tribal', 'Thriller'],
                 label: 'In Production',
                 kanji: '死',
-                // Specific typography for this title
-                titleFont: "'Labrada', serif"
+                titleFont: "'Labrada', serif",
+                tagColor: 'tag-purple'
             },
             {
                 id: 'Avalanche',
                 title: 'Avalanche',
-                subtitle: 'Rain Slicks and Neon Blades. In the neon-drenched streets of a future Kyoto, an underground syndicate faces a reckoning they never saw coming.',
+                subtitle: 'Rain Slicks and Neon Blades. In the neon-drenched streets of a future Kyoto, an underground syndicate faces a reckoning.',
                 image: '/media/posters/dynasties/Herimeni_streets.png',
                 path: '/pages/series/avalanche.html',
                 tags: ['Cyberpunk', 'Thriller'],
                 label: 'Trending',
                 kanji: '闇',
-                // Specific typography for this title
-                titleFont: "'Orbitron', sans-serif"
+                titleFont: "'Orbitron', sans-serif",
+                tagColor: 'tag-yellow'
             }
         ];
 
@@ -112,12 +121,15 @@
                     
                     <div className="relative z-20 w-full px-6 sm:px-12 md:px-24 py-24 md:py-32 flex flex-col justify-center">
                         <div className="flex flex-wrap items-center gap-3 mb-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-out">
-                            <span className="bg-[#C02F12] text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-sm tracking-[0.2em] uppercase shadow-lg shadow-[#C02F12]/30">
+                            <span className="label-knockout px-3 py-1 rounded-sm text-[10px] md:text-xs font-black tracking-[0.2em] uppercase shadow-lg">
                                 {series.label}
                             </span>
                             <div className="flex gap-4">
                                 {series.tags.map(tag => (
-                                    <span key={tag} className="text-[#FAEBD7]/50 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-l border-[#FAEBD7]/20 pl-4">
+                                    <span 
+                                        key={tag} 
+                                        className={`${series.tagColor} text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-l pl-4 transition-colors duration-500`}
+                                    >
                                         {tag}
                                     </span>
                                 ))}
@@ -165,8 +177,16 @@
                 <div className="min-h-screen bg-[#1A1C1F] w-full flex flex-col selection:bg-[#C02F12] selection:text-white">
                     <nav className="fixed top-0 left-0 w-full z-50 px-6 sm:px-10 py-6 sm:py-8 flex justify-between items-center bg-gradient-to-b from-[#1A1C1F] via-[#1A1C1F]/70 to-transparent">
                         <div className="flex items-center gap-4 group cursor-pointer">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C02F12] rounded-full flex items-center justify-center shadow-2xl shadow-[#C02F12]/40 group-hover:scale-110 transition-transform">
-                                <span className="text-[#FAEBD7] font-black text-xl sm:text-2xl">T</span>
+                            <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-[#C02F12] rounded-full flex items-center justify-center shadow-2xl shadow-[#C02F12]/40 group-hover:scale-110 transition-transform overflow-hidden">
+                                {/* Logo Image */}
+                                <img 
+                                    src="/media/logos/IMG_5918-removebg-preview.png" 
+                                    alt="Toriku Logo"
+                                    className="w-full h-full object-contain p-1 z-10"
+                                    onError={(e) => { e.target.style.display = 'none'; }}
+                                />
+                                {/* Fallback Text Icon */}
+                                <span className="absolute inset-0 flex items-center justify-center text-[#FAEBD7] font-black text-xl sm:text-2xl z-0">T</span>
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-[#FAEBD7] font-black tracking-[0.3em] uppercase text-xs sm:text-sm leading-none">Toriku Films</span>
@@ -189,7 +209,7 @@
                             </div>
                         </div>
                         <div className="pointer-events-auto hidden sm:block">
-                           <span className="text-[#FAEBD7]/20 text-[9px] uppercase tracking-[0.4em] font-black">Est. 2026 / Visual Narratives</span>
+                            <span className="text-[#FAEBD7]/20 text-[9px] uppercase tracking-[0.4em] font-black">Est. 2026 / Visual Narratives</span>
                         </div>
                     </footer>
                 </div>
