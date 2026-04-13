@@ -177,16 +177,12 @@
                 <div className="min-h-screen bg-[#1A1C1F] w-full flex flex-col selection:bg-[#C02F12] selection:text-white">
                     <nav className="fixed top-0 left-0 w-full z-50 px-6 sm:px-10 py-6 sm:py-8 flex justify-between items-center bg-gradient-to-b from-[#1A1C1F] via-[#1A1C1F]/70 to-transparent">
                         <div className="flex items-center gap-4 group cursor-pointer">
-                            <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-[#C02F12] rounded-full flex items-center justify-center shadow-2xl shadow-[#C02F12]/40 group-hover:scale-110 transition-transform overflow-hidden">
-                                {/* Logo Image */}
+                            <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <img 
                                     src="/media/logos/IMG_5918-removebg-preview.png" 
-                                    alt="Toriku Logo"
-                                    className="w-full h-full object-contain p-1 z-10"
-                                    onError={(e) => { e.target.style.display = 'none'; }}
+                                    alt="Toriku Films Logo"
+                                    className="w-full h-full object-contain"
                                 />
-                                {/* Fallback Text Icon */}
-                                <span className="absolute inset-0 flex items-center justify-center text-[#FAEBD7] font-black text-xl sm:text-2xl z-0">T</span>
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-[#FAEBD7] font-black tracking-[0.3em] uppercase text-xs sm:text-sm leading-none">Toriku Films</span>
